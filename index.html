@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+
     <link rel="stylesheet" href="style.css">
 
     <title>Menu Vertical Responsivo</title>
@@ -13,10 +15,12 @@
         <div class="mobile">
             <div class="header">
                 <div class="logo">
-                    <div class="more"><button>More</button></div>
+                    <div class="more"><button id="bMore"><span class="material-symbols-outlined">
+                        menu
+                        </span></button></div>
                 </div>
             </div>
-            <div class="links">
+            <div id="links" class="links collapsed">
                 <a href="#">Services</a>
                 <a href="#">About</a>
                 <a href="#">Contact</a>
@@ -49,5 +53,13 @@
             </div>
         </div> 
     </nav>
+    <script>
+        const bMore = document.querySelector('#bMore');
+        const links = document.querySelector('#links')
+
+        bMore.addEventListener('click', e => {
+            links.classList.toggle('collapsed');
+        });
+    </script>
 </body>
 </html>
