@@ -9,6 +9,7 @@ nav{
     width: 100%;
 }
 nav .mobile{
+    display: none;
 }
 nav .logo {
     min-width: 250px;
@@ -26,5 +27,34 @@ nav a:hover{
 nav .desktop{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    pad: 0 20px;
 }
+nav .desktop .primary,
+nav .desktop .secondary{
+    display: flex;
+}
+nav .desktop .secondary.mini{
+    display: none;
+}
+/*Para agregar este menu tengo que ver en que cabtidad de px se empieza a romper el texto y ese numero agrego para que se pueda hacer responsivo*/
+@media screen and (max-width: 1016px) {
+    nav .logo {
+        min-width: 100px;
+    }
 
+    nav .secondary.full {
+        display: none;
+    }
+    nav .secondary.mini {
+        display: block !important;
+    }
+    nav .secondary.mini .submenu{
+        background: -webkit-linear-gradient( 0deg , #121212  0% , #d31212  100%);
+        position: absolute;
+        display: none;
+    }
+    nav .secondary.mini:hover .submenu{
+        display: block;
+    }
+}
